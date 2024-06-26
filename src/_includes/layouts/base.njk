@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    {# This is the base template for the site–other templates extend this one #}
+    
+    <meta charset="utf-8" />
+    <link rel="icon" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Samuel J. Lieber" />
+    {# <link href="/public/css/bootstrap.min.css" rel="stylesheet"> #}
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap_override.css" />
+    {# <link rel="stylesheet" type="text/css" href="/public/css/style.css" /> #}
+    {% seo "" %}
+  </head>
+  <body class="">
+
+    {# MENU #}
+    <nav class="navbar navbar-expand-sm bg-dark fs-5">
+      <div class="container">
+        <a class="navbar-brand text-success " href="/"><strong><em>Foo Fooss</em></strong></a>
+        <button class="navbar-toggler border-0 p-0 fs-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list text-success"></i>
+        </button>
+        {# ""  #}
+        <div class="py-2 collapse navbar-collapse" id="navbarNav">
+          <div class="w-100">
+            <hr class="border-top border-bottom border-black border-2 m-0 p-0 d-block d-sm-none" style="--bs-border-opacity: .1;"/>
+            <ul class="navbar-nav d-flex flex-row justify-content-evenly justify-content-md-end row-gap-3 column-gap-3">
+              <li class="nav-item">
+                <a class="nav-link text-success" href="/photos"><i class="bi bi-camera2"></i> photo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-success" href="/inks"><i class="bi bi-pen-fill"></i> ink</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-success" href="/about"><i class="bi bi-peace"></i> about</a>
+              </li>
+            </ul>
+            <hr class="border-top border-bottom border-black border-2 m-0 p-0 d-block d-sm-none" style="--bs-border-opacity: .1;"/>
+          </div>
+        </div>
+      </div>
+    </nav>
+    {# END MENU #}
+    
+    {# MAIN #}
+    <main class="container d-flex flex-column justify-content-between">
+
+      <div class="w-100">
+        {# Page or post content will appear here #}
+        {{ content | safe }}    
+      </div>
+
+      {# FOOTER #}
+      <footer class="w-100 py-2 bg-dark border-top border-black border-2" style="--bs-border-opacity: .1;">
+        <div class="d-flex flex-row justify-content-between">
+          <a href="mailto:sjl@samueljlieber.com"><strong><i class="bi bi-envelope px-1"></i>sjl@samueljlieber.com</strong>
+          <a href="https://www.instagram.com/foo.fooss/"><i class="bi bi-instagram px-1"></i>foo.fooss</a>
+        </div>
+      </footer>
+      {# END FOOTER #}
+
+    </main>
+    {# END MAIN #}
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

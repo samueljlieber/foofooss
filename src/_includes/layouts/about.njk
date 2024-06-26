@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-about
+---
+
+<div class="container py-5">
+  {% block content %}
+    <div class="row">
+      <div class="col-4 col-md-2">
+        {% image image, 'A portrait of Samuel J. Lieber', '25vw', 'img img-fluid mw-50 d-block mx-auto border border-2 rounded-circle' %}
+      </div>
+      <div class="col-8 col-md-10 align-self-center ps-3">
+        <h1 class="">{{ title | safe}}</h1>
+        <p class="lead">{{ description | safe}}</p>
+      </div>
+    </div>
+
+    <div class="py-4 py-md-5 fs-5">
+      {{ content | safe }}
+    </div>
+  {% endblock %}
+</div>

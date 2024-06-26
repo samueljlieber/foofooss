@@ -1,0 +1,10 @@
+[build.environment]
+  base = "./"
+  publish = "./_site"
+  command = "npm run build"
+
+[[plugins]]
+package = "netlify-plugin-cache"
+  [plugins.inputs]
+  # Optional (but highly recommended). Defaults to [".cache"].
+  paths = ["resources", "_vendor", "folder/file.md"]

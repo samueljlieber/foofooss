@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-inks
+---
+
+<div class="container py-5">
+  <div class="row">
+    {# List the inks in the collection #}
+    <div class="fs-5 text-center">
+      {{ content | safe }}
+    </div>
+    <div class="card col-12 col-lg-4 mx-auto text-bg-warning border-2 border-danger">
+      <div class="card-body">
+        <h3 class="card-title h2"><a class="text-dark icon-link" href="/inks"><i class="bi bi-pen-fill"></i> ink</a></h3>
+        <ul class="card-text list-group">
+          {%- for ink in collections.inks -%}
+            <li class="list-group-item bg-light icon-link p-2" {% if ink.url == ink.url %} aria-current="page"{% endif %}>
+              <a class="text-dark" href='{{ ink.url }}'><strong>{{ ink.data.title }}</strong>: <span class="text-wrap">{{ ink.data.description }}</span></a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

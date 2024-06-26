@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-inks
+---
+
+<div class="container py-5">
+  <div>        
+    {% block content %}
+      <div class="row">
+        <div class="{{ imageCol}}">
+          {% if image %}
+            {% image image.url, image.alt, image.size, image.class %}
+          {% endif %}
+        </div>
+        <div class="{{ textCol }}">
+          <h1 class="pb-3">{{title}}</h1>
+          {{ content | safe }}
+        </div>
+      </div>
+    {% endblock %}
+    
+    <div class="controls py-5">
+      <p class="text-center">
+        {% if prev.url %}
+            <a class="previous" href="{{ prev.url }}"><i class="bi bi-caret-left-fill text-warning"></i> {{ prev.data.title }}</a>
+        {% endif %}  
+        {% if next.url and prev.url %}
+            <i class="bi bi-dot"></i>
+        {% endif %}  
+        {% if next.url %}
+            <a class="next" href="{{ next.url }}">{{ next.data.title }} <i class="bi bi-caret-right-fill text-warning"></i></a>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</div>

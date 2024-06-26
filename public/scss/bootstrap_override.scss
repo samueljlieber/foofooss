@@ -1,0 +1,34 @@
+$primary:   #1CC9B7;
+$secondary: #F8C02E;
+$success:   #F8C02E;
+$info:      #1ca1c9;
+$warning:   #be402c;  
+$danger:    #582043;
+$light:     #f8f8f8;
+$dark:      #202022;
+
+
+$headings-font-family:        'Aleo';
+$font-family-sans-serif:      'Aleo';
+
+$body-color:                $light !default;
+$body-bg:                   $dark !default;
+$link-color:                $secondary;
+$link-decoration:           none;
+$link-hover-decoration:     underline;
+
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/helpers";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Fira+Code:wght@300..700&display=swap");
+

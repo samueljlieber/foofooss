@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-photos
+---
+
+<div class="container py-5">
+  <div class="row">
+    <div class="fs-5 text-center">
+      {{ content | safe }}
+    </div>
+    {# List the photos in the collection #}
+    <div class="card col-12 col-lg-4 mx-auto text-bg-info border-2 border-info">
+      <div class="card-body">
+        <h3 class="card-title h2"><a class="text-dark icon-link" href="/photos"><i class="bi bi-camera2"></i> photography</a></h3>
+        <ul class="card-text list-group">
+          {%- for photo in collections.photos -%}
+            <li class="list-group-item bg-light icon-link p-2" {% if page.url == photo.url %} aria-current="page"{% endif %}>
+              <a class="text-dark" href='{{ photo.url }}'><strong>{{ photo.data.title }}</strong>: <span class="text-wrap">{{ photo.data.description }}</span></a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

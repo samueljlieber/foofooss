@@ -1,0 +1,48 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-home
+---
+
+<div class="container py-5">
+  <div class="">
+    <h1 class="pb-4">{{ title | safe }}</h1>
+
+    <div class="fs-5 pb-4">
+      {{ content | safe }}
+    </div>
+    
+    {# COLLECTIONS #}
+    <div class="row gap-4">
+      {# List the photos in the collection #}
+      <div class="card col-12 col-lg-4 text-bg-info border-2 border-info">
+        <div class="card-body">
+          <h3 class="card-title h2"><a class="text-dark icon-link" href="/photos"><i class="bi bi-camera2"></i> photography</a></h3>
+          <ul class="card-text list-group">
+            {%- for photo in collections.photos -%}
+              <li class="list-group-item bg-light icon-link p-2" {% if page.url == photo.url %} aria-current="page"{% endif %}>
+                <a class="text-dark" href='{{ photo.url }}'><strong>{{ photo.data.title }}</strong>: <span class="text-wrap">{{ photo.data.description }}</span></a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+
+      {# List the inks in the collection #}
+      <div class="card col-12 col-lg-4 text-bg-warning border-2 border-danger">
+        <div class="card-body">
+          <h3 class="card-title h2"><a class="text-dark icon-link" href="/inks"><i class="bi bi-pen-fill"></i> ink</a></h3>
+          <ul class="card-text list-group">
+            {%- for ink in collections.inks -%}
+              <li class="list-group-item bg-light icon-link p-2" {% if ink.url == ink.url %} aria-current="page"{% endif %}>
+                <a class="text-dark" href='{{ ink.url }}'><strong>{{ ink.data.title }}</strong>: <span class="text-wrap">{{ ink.data.description }}</span></a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

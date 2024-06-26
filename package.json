@@ -1,0 +1,35 @@
+{
+  "name": "foo-fooss",
+  "version": "0.1.0",
+  "description": "A simple portfolio blog using Eleventy.",
+  "scripts": {
+    "watch:sass": "sass /public/sass:_site/public/css --watch",
+    "clean": "rm -rf _site node_modules .cache",
+    "start": "eleventy --serve",
+    "build": "NODE_ENV=production eleventy"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "eleventy-plugin-seo": "0.5.2",
+    "luxon": "^3.4.0",
+    "netlify-plugin-cache": "^1.0.3",
+    "sass": "^1.77.6"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-img": "^4.0.2"
+  },
+  "engines": {
+    "node": "14"
+  },
+  "repository": {
+    "url": "https://github.com/samueljlieber/foofooss"
+  },
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "keywords": [
+    "node",
+    "eleventy",
+    "express"
+  ]
+}
